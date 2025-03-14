@@ -28,8 +28,8 @@ export function Nav() {
               href={item.path}
               className={`relative -mx-3 -my-2 rounded-lg px-3 py-2 text-sm transition-colors hover:text-green-700 ${
                 pathname === item.path
-                  ? 'text-green-700 dark:text-green-600'
-                  : 'text-foreground/60'
+                  ? 'text-green-1000 dark:text-green-600'
+                  : 'text-foreground'
               }`}
             >
               {pathname === item.path && (
