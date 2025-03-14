@@ -29,12 +29,21 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${robotoMono.variable} font-sans antialiased min-h-screen flex flex-col`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Nav />
-          <main className="flex-1">{children}</main>
-          <Footer />
+    <html lang="en" suppressHydrationWarning className="overflow-hidden">
+      <body className={`${inter.variable} ${robotoMono.variable} font-sans antialiased h-screen overflow-hidden`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="relative flex h-full flex-col overflow-hidden">
+            <Nav />
+            <main className="flex-1 overflow-auto hide-scrollbar h-full">
+              {children}
+            </main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>

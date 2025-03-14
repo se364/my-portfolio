@@ -57,3 +57,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Hide scrollbar but maintain scroll functionality */
+@layer utilities {
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    overflow-y: auto;
+  }
+
+  /* Hide WebKit scrollbar (Chrome, Safari, newer versions of Opera) */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}

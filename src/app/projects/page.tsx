@@ -35,7 +35,7 @@ export default function Projects() {
         >
           <h1 className="text-4xl font-bold tracking-tight">Projects</h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            A collection of projects I've worked on, showcasing my skills and experience.
+            A collection of projects I've worked on.
           </p>
         </motion.div>
 
