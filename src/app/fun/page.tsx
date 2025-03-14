@@ -1,6 +1,5 @@
 'use client'
 
-import { Nav } from '@/components/nav'
 import { motion } from 'framer-motion'
 
 const interests = [
@@ -35,7 +34,6 @@ const books = [
 export default function Fun() {
   return (
     <>
-      <Nav />
       <div className="container px-4 pt-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
