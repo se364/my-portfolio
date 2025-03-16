@@ -33,8 +33,8 @@ export default function RootLayout({
       <body className={`${inter.variable} ${robotoMono.variable} font-sans antialiased h-screen overflow-hidden`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
+          forcedTheme="light"
           disableTransitionOnChange
         >
           <div className="relative flex h-full flex-col overflow-hidden">
