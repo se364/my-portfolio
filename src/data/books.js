@@ -1,7 +1,7 @@
 export const books = [
   {
-    title: "Can't Hurt Me",
-    author: "David Goggins",
+    title: "The Undoing Project",
+    author: "Michael Lewis",
     status: "Currently Reading",
   },
   {
@@ -64,6 +64,12 @@ export const books = [
     author: "Jon Kabat-Zinn",
     status: "Completed",
   },
+  {
+    title: "On Writing Well",
+    author: "William Zinsser",
+    status: "Completed",
+  },
+
   
 
 
