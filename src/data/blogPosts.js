@@ -3,7 +3,7 @@ export const blogPosts = [
     slug: "building-portfolio",
     title: "Building a Portfolio with Next.js and Tailwind",
     description: "Learn how I built this portfolio website using Next.js 14 and Tailwind CSS.",
-    date: "April 20, 2024",
+    date: "January, 20, 2025",
     content: `
 ## Why I Chose Next.js
 
@@ -43,7 +43,7 @@ Building this portfolio has been a great learning experience. Next.js and Tailwi
     slug: "ai-in-space-exploration",
     title: "The Role of AI in Modern Space Exploration",
     description: "Exploring how artificial intelligence is revolutionizing how we explore the cosmos.",
-    date: "April 15, 2024",
+    date: "February, 15, 2025",
     content: `
 ## AI's Growing Role in Space Missions
 
@@ -69,6 +69,26 @@ Looking ahead, AI could enable more ambitious missions:
 ## Conclusion
 
 As AI continues to advance, its role in space exploration will only grow. The combination of human creativity and machine intelligence opens up exciting possibilities for discovering the secrets of our universe.
+    `
+  },
+  {
+    slug: "ai-in-for-future",
+    title: "Artificial Intelligence for Future",
+    description: "Artificial Intelligence is the future. It is the next trillion-dollar industry which everyone should keep an eye on.",
+    date: "January, 15, 2023",
+    content: `
+
+## I have written this blog post in 2023.
+As the year is coming to an end, I have been more focused on innovations in AI. It is the next trillion-dollar industry which everyone should keep an eye on. In the next decade, every industry will have some sort of touch to AI which will replace many jobs, and hence computer science will be the most important subject for anyone to learn about. There are many potential benefits of artificial intelligence (AI) in the future. Some possible benefits include:
+
+1. Improved efficiency: AI can perform tasks faster and more accurately than humans, which could lead to increased efficiency in a variety of industries.
+2. Enhanced decision-making: AI can analyze large amounts of data and make decisions based on that analysis, potentially leading to better and more informed decision-making.
+3. Increased productivity: AI can automate routine tasks, freeing up humans to focus on more complex and creative work, which could lead to increased productivity.
+4. Improved customer service: AI-powered chatbots and other customer service technologies can provide quick and accurate responses to customer inquiries, improving the overall customer experience.
+5. Improved healthcare: AI can be used to analyze medical data and assist in the diagnosis and treatment of diseases, potentially improving healthcare outcomes.
+6. Increased safety: AI can be used to monitor and control hazardous environments, potentially increasing safety in industries such as manufacturing and transportation.
+
+There are numerous free resources online to study computer science and basic models of AI. The earlier you know about the benefits and usage of AI and applying to a service, the faster you can live to the big changes of the coming economy. Overall, the potential benefits of AI are numerous and varied, and its future applications will depend on the continued development of the technology and its integration into various industries.
     `
   }
 ]; 

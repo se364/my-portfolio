@@ -4,7 +4,19 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { blogPosts } from '@/data/blogPosts'
 
+// Helper function to parse dates and sort posts
+const sortPostsByDateDesc = (posts) => {
+  return [...posts].sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB - dateA; // Sort in descending order (newest first)
+  });
+};
+
 export default function Blog() {
+  // Sort posts by date, newest first
+  const sortedPosts = sortPostsByDateDesc(blogPosts);
+
   return (
     <>
       <div className="container px-4 pt-24 pb-12 flex flex-col items-center">
@@ -21,7 +33,7 @@ export default function Blog() {
         </motion.div>
 
         <div className="mt-16 grid gap-8 sm:grid-cols-2 max-w-4xl mx-auto">
-          {blogPosts.map((post, index) => (
+          {sortedPosts.map((post, index) => (
             <motion.div
               key={post.slug}
               initial={{ opacity: 0, y: 20 }}
