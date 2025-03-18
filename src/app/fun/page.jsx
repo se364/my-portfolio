@@ -1,22 +1,27 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
-import { funPosts } from '@/data/funPosts'
+import { books } from '@/data/books'
 
-// Helper function to parse dates and sort posts
-const sortPostsByDateDesc = (posts) => {
-  return [...posts].sort((a, b) => {
-    const dateA = new Date(a.date);
-    const dateB = new Date(b.date);
-    return dateB - dateA; // Sort in descending order (newest first)
+// Group books by status
+const groupBooksByStatus = (books) => {
+  const grouped = {
+    'Currently Reading': [],
+    'Completed': []
+  };
+  
+  books.forEach(book => {
+    if (grouped[book.status]) {
+      grouped[book.status].push(book);
+    }
   });
+  
+  return grouped;
 };
 
-export default function Fun() {
-  // Sort posts by date, newest first
-  const sortedPosts = sortPostsByDateDesc(funPosts);
-
+export default function Books() {
+  const groupedBooks = groupBooksByStatus(books);
+  
   return (
     <>
       <div className="container px-4 pt-24 pb-12 flex flex-col items-center">
@@ -26,36 +31,58 @@ export default function Fun() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl"
         >
-          <h1 className="text-4xl font-bold tracking-tight">Fun Stuff</h1>
+          <h1 className="text-4xl font-bold tracking-tight">Books and fun</h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            A collection of fun space and tech-related content to enjoy.
+           Some books I've read and some fun posts.
           </p>
         </motion.div>
 
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 max-w-4xl mx-auto">
-          {sortedPosts.map((post, index) => (
-            <motion.div
-              key={post.slug}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-lg border bg-card p-6 flex flex-col h-auto"
-            >
-              <div className="flex-1">
-                <p className="text-sm text-muted-foreground mb-2">{post.date}</p>
-                <h2 className="text-xl font-semibold mb-3">{post.title}</h2>
-                <p className="text-sm text-muted-foreground mb-4">{post.description}</p>
-              </div>
-              <div>
-                <Link
-                  href={`/fun/${post.slug}`}
-                  className="relative rounded-lg px-3 py-2 text-sm font-medium transition-colors text-green-700 hover:text-green-700 bg-yellow-100"
+        {/* Currently Reading Section */}
+        <div className="w-full max-w-2xl mx-auto mt-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-2xl font-bold mb-4">Currently Reading</h2>
+            <ul className="list-disc pl-5 space-y-2">
+              {groupedBooks['Currently Reading'].map((book, index) => (
+                <motion.li
+                  key={book.title}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  className="text-base text-muted-foreground"
                 >
-                  Read More
-                </Link>
-              </div>
-            </motion.div>
-          ))}
+                  <span className="font-medium">{book.title}</span> by {book.author}
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+        </div>
+
+        {/* Completed Section */}
+        <div className="w-full max-w-2xl mx-auto mt-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <h2 className="text-2xl font-bold mb-4">Completed</h2>
+            <ul className="list-disc pl-5 space-y-2">
+              {groupedBooks['Completed'].map((book, index) => (
+                <motion.li
+                  key={book.title}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  className="text-base text-muted-foreground"
+                >
+                  <span className="font-medium">{book.title}</span> by {book.author}
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
       </div>
     </>
