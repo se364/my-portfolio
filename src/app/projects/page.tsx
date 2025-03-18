@@ -10,16 +10,22 @@ const projects = [
     link: 'http://www.daysidellc.com/',
   },
   {
-    title: 'Project Two',
-    description: 'A real-time chat application with WebSocket integration.',
+    title: 'Portfolio',
+    description: 'Personal portfolio website built with Next.js and Tailwind CSS.',
+    image: '/project2.png',
+    link: 'https://project2.com',
+  },
+  {
+    title: 'Sattelite Tracking Portal',
+    description: 'Coming soon.',
     image: '/project2.jpg',
     link: 'https://project2.com',
   },
   {
-    title: 'Project Three',
-    description: 'A real-time chat application with WebSocket integration.',
-    image: '/project2.jpg',
-    link: 'https://project2.com',
+    title: 'Pick A Pet',
+    description: 'A simple pet adoption website built with HTML, CSS, and JavaScript.',
+    image: '/project4.png',
+    link: 'https://github.com/se364/PickAPet',
   },
 ]
 
