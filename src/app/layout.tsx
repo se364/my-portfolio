@@ -19,8 +19,8 @@ const robotoMono = Roboto_Mono({
 
 export const metadata: Metadata = {
   title: 'Shah Emran',
-  description: 'Personal portfolio and blog of a software engineer',
-  keywords: ['Software Engineer', 'Web Development', 'Full Stack', 'Portfolio', 'Blog'],
+  description: 'random thoughts and projects',
+  keywords: ['Software Engineer', 'Space', 'Rockets', 'Full Stack', 'Portfolio', 'Blog', 'Science'],
 }
 
 export default function RootLayout({
