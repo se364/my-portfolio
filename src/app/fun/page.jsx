@@ -105,7 +105,7 @@ export default function Books() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <h2 className="text-2xl font-bold mb-4">Interesting Links</h2>
+              <h2 className="text-2xl font-bold mb-4">Some Links</h2>
               <ul className="list-disc pl-5 space-y-2">
                 {interestingLinks.map((link, index) => (
                   <motion.li
