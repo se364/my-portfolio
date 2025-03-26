@@ -18,8 +18,8 @@ const projects = [
   {
     title: 'Sattelite Tracking Portal',
     description: 'Coming soon.',
-    image: '/project2.jpg',
-    link: 'https://project2.com',
+    image: '/project3.png',
+    link: 'https://github.com/se364/satellite_tracking_portal',
   },
   {
     title: 'Pick A Pet',
