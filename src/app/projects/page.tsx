@@ -1,5 +1,6 @@
 'use client'
 
+import { useRef } from 'react'
 import { motion } from 'framer-motion'
 
 const projects = [
@@ -16,18 +17,50 @@ const projects = [
     link: 'https://project2.com',
   },
   {
-    title: 'Sattelite Tracking Portal',
-    description: 'Coming soon.',
-    image: '/project3.png',
-    link: 'https://github.com/se364/satellite_tracking_portal',
-  },
-  {
-    title: 'Pick A Pet',
-    description: 'A simple pet adoption website built with HTML, CSS, and JavaScript.',
-    image: '/project4.png',
-    link: 'https://github.com/se364/PickAPet',
+    title: 'Obstacle Avoiding Robot Using Arduino',
+    description: 'The car uses a servo mounted ultrasonic sensor to detect objects in front of and on either side of the car and an L293D DC motor driver shield to drive four geared motors, one on each wheel. An Arduino underneath the shield controls the motor shield, ultrasonic sensor, and the servo.',
+    image: '/project-robot.jpg',
+    video: '/project-robot.mp4',
+    link: '#',
   },
 ]
+
+function ProjectMedia({ project }: { project: (typeof projects)[number] }) {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  if (!project.video) {
+    return (
+      <img
+        src={project.image}
+        alt={project.title}
+        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+      />
+    )
+  }
+
+  return (
+    <>
+      <img
+        src={project.image}
+        alt={project.title}
+        className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+      />
+      <video
+        ref={videoRef}
+        src={project.video}
+        muted
+        loop
+        playsInline
+        onMouseEnter={() => videoRef.current?.play()}
+        onMouseLeave={() => {
+          videoRef.current?.pause()
+          if (videoRef.current) videoRef.current.currentTime = 0
+        }}
+        className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+      />
+    </>
+  )
+}
 
 export default function Projects() {
   return (
@@ -54,12 +87,8 @@ export default function Projects() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group relative overflow-hidden rounded-lg border bg-card h-[340px] flex flex-col"
             >
-              <div className="h-36 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
+              <div className="h-36 overflow-hidden relative">
+                <ProjectMedia project={project} />
               </div>
               <div className="p-4 flex-1 flex flex-col">
                 <h2 className="text-xl font-semibold">{project.title}</h2>
@@ -81,4 +110,4 @@ export default function Projects() {
       </div>
     </>
   )
-} 
+}
