@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 const projects = [
@@ -9,19 +10,22 @@ const projects = [
     description: 'Designed and built a responsive, data-driven website',
     image: '/project1.png',
     link: 'http://www.daysidellc.com/',
+    internal: false,
   },
   {
     title: 'Portfolio',
     description: 'Personal portfolio website built with Next.js and Tailwind CSS.',
     image: '/project2.png',
-    link: 'https://project2.com',
+    link: 'https://www.shahemran.com/',
+    internal: false,
   },
   {
     title: 'Obstacle Avoiding Robot Using Arduino',
     description: 'The car uses a servo mounted ultrasonic sensor to detect objects in front of and on either side of the car and an L293D DC motor driver shield to drive four geared motors, one on each wheel. An Arduino underneath the shield controls the motor shield, ultrasonic sensor, and the servo.',
     image: '/project-robot.jpg',
     video: '/project-robot.mp4',
-    link: '#',
+    link: '/projects/obstacle-avoiding-robot',
+    internal: true,
   },
 ]
 
@@ -94,14 +98,23 @@ export default function Projects() {
                 <h2 className="text-xl font-semibold">{project.title}</h2>
                 <p className="mt-2 text-sm text-muted-foreground flex-grow">{project.description}</p>
                 <div className="mt-2 flex">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="relative rounded-lg px-3 py-2 text-sm font-medium transition-colors text-green-700 hover:text-green-700 bg-yellow-100"
-                  >
-                    View Project
-                  </a>
+                  {project.internal ? (
+                    <Link
+                      href={project.link}
+                      className="relative rounded-lg px-3 py-2 text-sm font-medium transition-colors text-green-700 hover:text-green-700 bg-yellow-100"
+                    >
+                      View Project
+                    </Link>
+                  ) : (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative rounded-lg px-3 py-2 text-sm font-medium transition-colors text-green-700 hover:text-green-700 bg-yellow-100"
+                    >
+                      View Project
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
