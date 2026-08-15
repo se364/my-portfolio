@@ -10,7 +10,7 @@ export default function ObstacleAvoidingRobot() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="w-full max-w-3xl"
+        className="w-full max-w-4xl"
       >
         <Link
           href="/projects"
@@ -30,20 +30,22 @@ export default function ObstacleAvoidingRobot() {
           shield, ultrasonic sensor, and the servo.
         </p>
 
-        <div className="mt-8 overflow-hidden rounded-lg border bg-card">
-          <img
-            src="/project-robot.jpg"
-            alt="Obstacle Avoiding Robot Using Arduino"
-            className="w-full h-auto object-cover"
-          />
-        </div>
+        <div className="mt-8 grid gap-8 sm:grid-cols-2">
+          <div className="aspect-video overflow-hidden rounded-lg border bg-card">
+            <img
+              src="/project-robot.jpg"
+              alt="Obstacle Avoiding Robot Using Arduino"
+              className="w-full h-full object-cover"
+            />
+          </div>
 
-        <div className="mt-8 overflow-hidden rounded-lg border bg-card">
-          <video
-            src="/project-robot.mp4"
-            controls
-            className="w-full h-auto"
-          />
+          <div className="aspect-video overflow-hidden rounded-lg border bg-card">
+            <video
+              src="/project-robot.mp4"
+              controls
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </motion.div>
     </div>

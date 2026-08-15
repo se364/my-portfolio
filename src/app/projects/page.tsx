@@ -21,7 +21,7 @@ const projects = [
   },
   {
     title: 'Obstacle Avoiding Robot Using Arduino',
-    description: 'The car uses a servo mounted ultrasonic sensor to detect objects in front of and on either side of the car and an L293D DC motor driver shield to drive four geared motors, one on each wheel. An Arduino underneath the shield controls the motor shield, ultrasonic sensor, and the servo.',
+    description: 'An Arduino-powered robot that uses a servo-mounted ultrasonic sensor to detect and steer around obstacles in real time.',
     image: '/project-robot.jpg',
     video: '/project-robot.mp4',
     link: '/projects/obstacle-avoiding-robot',
