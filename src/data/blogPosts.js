@@ -5,7 +5,7 @@ export const blogPosts = [
     description: "On learning engineering, and life along the way.",
     date: "August, 14, 2026",
     content: `
-Write your story here.
+I am not using AI to write any of my blogs. This blog is for developing my communication skills and the best way is the write as much as possible.
     `
   }
 ];
