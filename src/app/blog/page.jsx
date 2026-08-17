@@ -28,7 +28,7 @@ export default function Blog() {
         >
           <h1 className="text-4xl font-bold tracking-tight">Blog</h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            Thoughts, ideas, and insights about life, technology, and more.
+            My journey learning engineering, and life along the way.
           </p>
         </motion.div>
 
